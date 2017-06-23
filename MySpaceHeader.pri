@@ -8841,6 +8841,7 @@ HEADERS += \
 	"$$unrealRootPath/Engine/Plugins/Tests/ScreenshotTools/Source/ScreenshotTools/Public/ScreenshotTools.h" \
 	"$$MySpaceRootPath/Source/MySpace/MySpace.h" \
 	"$$MySpaceRootPath/Source/MySpace/MySpaceGameModeBase.h" \
+	"$$MySpaceRootPath/Source/MySpace/PlayerSpaceShip.h" \
 	"$$MySpaceRootPath/Source/MySpace/SpacePlayerController.h" \
  
 

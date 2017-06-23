@@ -6839,6 +6839,7 @@ set(SOURCE_FILES
 	"${UE4_ROOT_PATH}/Engine/Plugins/Tests/ScreenshotTools/Source/ScreenshotTools/Private/ScreenshotTools.cpp"
 	"${GAME_ROOT_PATH}/Source/MySpace/MySpace.cpp"
 	"${GAME_ROOT_PATH}/Source/MySpace/MySpaceGameModeBase.cpp"
+	"${GAME_ROOT_PATH}/Source/MySpace/PlayerSpaceShip.cpp"
 	"${GAME_ROOT_PATH}/Source/MySpace/SpacePlayerController.cpp"
  )
 
@@ -15685,6 +15686,7 @@ set(HEADER_FILES
 	"${UE4_ROOT_PATH}/Engine/Plugins/Tests/ScreenshotTools/Source/ScreenshotTools/Public/ScreenshotTools.h"
 	"${GAME_ROOT_PATH}/Source/MySpace/MySpace.h"
 	"${GAME_ROOT_PATH}/Source/MySpace/MySpaceGameModeBase.h"
+	"${GAME_ROOT_PATH}/Source/MySpace/PlayerSpaceShip.h"
 	"${GAME_ROOT_PATH}/Source/MySpace/SpacePlayerController.h"
  )
 
