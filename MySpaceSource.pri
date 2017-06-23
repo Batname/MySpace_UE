@@ -6828,5 +6828,6 @@ SOURCES += \
 	"$$unrealRootPath/Engine/Plugins/Tests/ScreenshotTools/Source/ScreenshotTools/Private/ScreenshotTools.cpp" \
 	"$$MySpaceRootPath/Source/MySpace/MySpace.cpp" \
 	"$$MySpaceRootPath/Source/MySpace/MySpaceGameModeBase.cpp" \
+	"$$MySpaceRootPath/Source/MySpace/SpacePlayerController.cpp" \
  
 

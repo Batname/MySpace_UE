@@ -6839,6 +6839,7 @@ set(SOURCE_FILES
 	"${UE4_ROOT_PATH}/Engine/Plugins/Tests/ScreenshotTools/Source/ScreenshotTools/Private/ScreenshotTools.cpp"
 	"${GAME_ROOT_PATH}/Source/MySpace/MySpace.cpp"
 	"${GAME_ROOT_PATH}/Source/MySpace/MySpaceGameModeBase.cpp"
+	"${GAME_ROOT_PATH}/Source/MySpace/SpacePlayerController.cpp"
  )
 
 set(HEADER_FILES 
@@ -15684,6 +15685,7 @@ set(HEADER_FILES
 	"${UE4_ROOT_PATH}/Engine/Plugins/Tests/ScreenshotTools/Source/ScreenshotTools/Public/ScreenshotTools.h"
 	"${GAME_ROOT_PATH}/Source/MySpace/MySpace.h"
 	"${GAME_ROOT_PATH}/Source/MySpace/MySpaceGameModeBase.h"
+	"${GAME_ROOT_PATH}/Source/MySpace/SpacePlayerController.h"
  )
 
 set(CONFIG_FILES 
@@ -20128,6 +20130,25 @@ include_directories(
 	"${UE4_ROOT_PATH}/Engine/Source/Runtime/AudioMixer/Public/DSP"
 	"${UE4_ROOT_PATH}/Engine/Intermediate/Build/Linux/B4D820EA/UE4Editor/Inc/AudioMixer"
 	"${UE4_ROOT_PATH}/Engine/Source/Runtime/AudioMixer"
+	"${UE4_ROOT_PATH}/Engine/Source/Runtime/UMG/Public"
+	"${UE4_ROOT_PATH}/Engine/Source/Runtime/UMG/Public/Animation"
+	"${UE4_ROOT_PATH}/Engine/Source/Runtime/UMG/Public/Binding"
+	"${UE4_ROOT_PATH}/Engine/Source/Runtime/UMG/Public/Blueprint"
+	"${UE4_ROOT_PATH}/Engine/Source/Runtime/UMG/Public/Components"
+	"${UE4_ROOT_PATH}/Engine/Source/Runtime/UMG/Public/Slate"
+	"${UE4_ROOT_PATH}/Engine/Intermediate/Build/Linux/B4D820EA/UE4Editor/Inc/UMG"
+	"${UE4_ROOT_PATH}/Engine/Source/Runtime/UMG"
+	"${UE4_ROOT_PATH}/Engine/Source/Runtime/MovieScene/Public"
+	"${UE4_ROOT_PATH}/Engine/Source/Runtime/MovieScene/Public/Compilation"
+	"${UE4_ROOT_PATH}/Engine/Source/Runtime/MovieScene/Public/Evaluation"
+	"${UE4_ROOT_PATH}/Engine/Intermediate/Build/Linux/B4D820EA/UE4Editor/Inc/MovieScene"
+	"${UE4_ROOT_PATH}/Engine/Source/Runtime/MovieScene"
+	"${UE4_ROOT_PATH}/Engine/Source/Runtime/MovieSceneTracks/Public"
+	"${UE4_ROOT_PATH}/Engine/Source/Runtime/MovieSceneTracks/Public/Evaluation"
+	"${UE4_ROOT_PATH}/Engine/Source/Runtime/MovieSceneTracks/Public/Sections"
+	"${UE4_ROOT_PATH}/Engine/Source/Runtime/MovieSceneTracks/Public/Tracks"
+	"${UE4_ROOT_PATH}/Engine/Intermediate/Build/Linux/B4D820EA/UE4Editor/Inc/MovieSceneTracks"
+	"${UE4_ROOT_PATH}/Engine/Source/Runtime/MovieSceneTracks"
  )
 
 add_definitions( 
