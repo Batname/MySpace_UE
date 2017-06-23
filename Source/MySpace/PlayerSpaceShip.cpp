@@ -4,6 +4,8 @@
 #include "PlayerSpaceShip.h"
 #include "GameFramework/SpringArmComponent.h"
 #include "Camera/CameraComponent.h"
+#include "Components/SphereComponent.h"
+#include "UObject/ConstructorHelpers.h"
 
 
 // Sets default values
@@ -26,6 +28,21 @@ APlayerSpaceShip::APlayerSpaceShip()
 	// Take control of the default Player
 	AutoPossessPlayer = EAutoReceiveInput::Player0;
 
+	// Add mesh to player
+	USphereComponent* SphereComponent = CreateDefaultSubobject<USphereComponent>(TEXT("SphereComponent"));
+	SphereComponent->SetupAttachment(RootComponent);
+	SphereComponent->SetCollisionProfileName(TEXT("SpaceShip"));
+
+	UStaticMeshComponent* SphereVisual = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("VisualRepresentation"));
+	SphereVisual->SetupAttachment(SphereComponent);
+
+	static ConstructorHelpers::FObjectFinder<UStaticMesh> SphereVisualAsset(TEXT("/Game/Meshes/Sphere"));
+	if (SphereVisualAsset.Succeeded())
+	{
+		SphereVisual->SetStaticMesh(SphereVisualAsset.Object);
+		SphereVisual->SetRelativeLocation(FVector(0.0f, 0.0f, -40.0f));
+		SphereVisual->SetWorldScale3D(FVector(0.8f));
+	}
 }
 
 // Called when the game starts or when spawned
