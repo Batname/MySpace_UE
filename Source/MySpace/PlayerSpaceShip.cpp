@@ -4,7 +4,6 @@
 #include "PlayerSpaceShip.h"
 #include "GameFramework/SpringArmComponent.h"
 #include "Camera/CameraComponent.h"
-#include "Components/SphereComponent.h"
 #include "UObject/ConstructorHelpers.h"
 
 
@@ -29,19 +28,15 @@ APlayerSpaceShip::APlayerSpaceShip()
 	AutoPossessPlayer = EAutoReceiveInput::Player0;
 
 	// Add mesh to player
-	USphereComponent* SphereComponent = CreateDefaultSubobject<USphereComponent>(TEXT("SphereComponent"));
-	SphereComponent->SetupAttachment(RootComponent);
-	SphereComponent->SetCollisionProfileName(TEXT("SpaceShip"));
+	UStaticMeshComponent* SpaceShipVisual = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("VisualRepresentation"));
+	SpaceShipVisual->SetupAttachment(RootComponent);
 
-	UStaticMeshComponent* SphereVisual = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("VisualRepresentation"));
-	SphereVisual->SetupAttachment(SphereComponent);
-
-	static ConstructorHelpers::FObjectFinder<UStaticMesh> SphereVisualAsset(TEXT("/Game/Meshes/Sphere"));
-	if (SphereVisualAsset.Succeeded())
+	static ConstructorHelpers::FObjectFinder<UStaticMesh> CubeAsset(TEXT("/Game/Meshes/SuperSpaceShip"));
+	if (CubeAsset.Succeeded())
 	{
-		SphereVisual->SetStaticMesh(SphereVisualAsset.Object);
-		SphereVisual->SetRelativeLocation(FVector(0.0f, 0.0f, -40.0f));
-		SphereVisual->SetWorldScale3D(FVector(0.8f));
+		SpaceShipVisual->SetStaticMesh(CubeAsset.Object);
+		SpaceShipVisual->SetWorldScale3D(FVector(0.8f));
+		SpaceShipVisual->SetRelativeScale3D(FVector(1.0f, 1.0f, 0.2f));
 	}
 }
 
@@ -92,7 +87,7 @@ void APlayerSpaceShip::Tick(float DeltaTime)
 		if (!MovementInput.IsZero())
 		{
 			// Scale movement
-			MovementInput = MovementInput.SafeNormal() * 100.0f;
+			MovementInput = MovementInput.GetSafeNormal() * 100.0f;
 			FVector NewLocation = GetActorLocation();
 			NewLocation += GetActorForwardVector() * MovementInput.X * DeltaTime;
 			NewLocation += GetActorRightVector() * MovementInput.Y * DeltaTime;
