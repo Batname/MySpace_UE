@@ -31,5 +31,15 @@ protected:
 	class USpringArmComponent* OurCameraSpringArm;
 	class UCameraComponent* OurCamera;
 	
-	
+	FVector2D MovementInput;
+	FVector2D CameraInput;
+	float ZoomFactor;
+	bool bZoomIn;
+
+	void MoveForward(float AxisValue);
+	void MoveRight(float AxisValue);
+	void PitchCamera(float AxisValue);
+	void YawCamera(float AxisValue);
+	void ZoomIn();
+	void ZoomOut();
 };
